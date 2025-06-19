@@ -1,0 +1,48 @@
+/* Suppliers Page Styles */
+.supplier-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.supplier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.supplier-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.supplier-verification-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(25, 135, 84, 0.9);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.supplier-category-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(13, 110, 253, 0.9);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.rating {
+    color: #ffc107;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .supplier-card .card-img-top {
+        height: 150px;
+    }
+}
