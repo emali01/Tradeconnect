@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="suppliers_page_title">Suppliers - TradeConnect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="suppliers">
+  <!-- Navigation Bar -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-i18n="app_name">TradeConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html" data-i18n="products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="supplier.html" data-i18n="suppliers">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-i18n="get_quotes">Get Quotes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-language"></i> <span data-i18n="language">Language</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" class="change-language"data-lang="en">English</a></li>                                                                                                                                 <li><a class="dropdown-item" class="change-language"data-lang="sw">Kiswahili</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="auth/login.html" class="btn btn-outline-light me-2" data-i18n="login">Login</a>
+                        <a href="auth/register.html" class="btn btn-light" data-i18n="register">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h1 class="mb-0" data-i18n="suppliers_heading">Verified Suppliers</h1>
+                <div class="d-flex gap-3">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-filter me-2"></i> <span data-i18n="filter">Filter</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header" data-i18n="filter_by">Filter By</h6></li>
+                            <li><a class="dropdown-item" href="#" data-filter="all" data-i18n="all_suppliers">All Suppliers</a></li>
+                            <li><a class="dropdown-item" href="#" data-filter="verified" data-i18n="verified_only">Verified Only</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header" data-i18n="sort_by">Sort By</h6></li>
+                            <li><a class="dropdown-item" href="#" data-sort="name-asc" data-i18n="name_asc">Name (A-Z)</a></li>
+                            <li><a class="dropdown-item" href="#" data-sort="name-desc" data-i18n="name_desc">Name (Z-A)</a></li>
+                            <li><a class="dropdown-item" href="#" data-sort="rating" data-i18n="highest_rated">Highest Rated</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-group" style="width: 250px;">
+                        <input type="text" class="form-control" placeholder="Search suppliers..." data-i18n-placeholder="search_suppliers" id="supplierSearch">
+                        <button class="btn btn-primary" type="button" id="searchSupplierBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suppliers List -->
+            <div class="row g-4" id="suppliersContainer">
+                <!-- Suppliers will be loaded here via JavaScript -->
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Suppliers pagination" class="mt-5">
+                <ul class="pagination justify-content-center" id="suppliersPagination">
+                    <!-- Pagination will be loaded here via JavaScript -->
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Supplier Modal (for quick view) -->
+    <div class="modal fade" id="supplierModal" tabindex="-1" aria-labelledby="supplierModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="supplierModalLabel">Supplier Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="supplierModalBody">
+                    <!-- Supplier details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="close">Close</button>
+                    <a href="#" class="btn btn-primary" id="viewSupplierProfileBtn" data-i18n="view_full_profile">View Full Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (same as your main page) -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head content as account.html -->
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications| TradeConnect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .account-sidebar {
+            border-right: 1px solid #dee2e6;
+        }
+        .account-sidebar .nav-link {
+            color: #495057;
+            border-radius: 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .account-sidebar .nav-link.active {
+            color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-left: 3px solid #0d6efd;
+        }
+        .account-sidebar .nav-link:hover:not(.active) {
+            background-color: #f8f9fa;
+        }
+        .account-card {
+            border: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .order-status {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .status-processing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-shipped {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        .status-delivered {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-cancelled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+<body>
+    <!-- Same navigation bar as account.html -->
+
+    <!-- Notifications Content -->
+    <section class="account-page py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Same sidebar as account.html -->
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Notifications</h2>
+                        <div>
+                            <button class="btn btn-outline-secondary me-2" id="markAllReadBtn">
+                                <i class="fas fa-check-circle me-1"></i> Mark All as Read
+                            </button>
+                            <button class="btn btn-outline-danger" id="clearAllBtn">
+                                <i class="fas fa-trash-alt me-1"></i> Clear All
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Notification Filters -->
+                    <ul class="nav nav-pills mb-4">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-filter="all">All</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-filter="orders">Orders</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-filter="messages">Messages</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-filter="promotions">Promotions</button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Notifications List -->
+                    <div class="card account-card">
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="notificationsList">
+                                <div class="list-group-item list-group-item-action unread-notification" data-type="orders">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <div class="d-flex">
+                                            <div class="me-3 text-primary">
+                                                <i class="fas fa-box-open fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">Your order #TC-78945 has been shipped</h6>
+                                                <p class="mb-1">Your order is on the way and will arrive within 2 business days.</p>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Today, 10:45 AM</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action unread-notification" data-type="messages">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <div class="d-flex">
+                                            <div class="me-3 text-primary">
+                                                <i class="fas fa-envelope fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">New message from Global Building Solutions</h6>
+                                                <p class="mb-1">You have received a new quote request for construction materials.</p>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Yesterday, 3:22 PM</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action" data-type="promotions">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <div class="d-flex">
+                                            <div class="me-3 text-primary">
+                                                <i class="fas fa-tag fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">Special discount on construction materials</h6>
+                                                <p class="mb-1">Get 10% off on all orders above ₹50,000 this week only.</p>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action" data-type="orders">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <div class="d-flex">
+                                            <div class="me-3 text-primary">
+                                                <i class="fas fa-box-open fa-lg"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">Your order #TC-78231 is being processed</h6>
+                                                <p class="mb-1">We've received your order and are preparing it for shipment.</p>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same footer as account.html -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

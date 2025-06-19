@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head content as account.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Items | TradeConnect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .account-sidebar {
+            border-right: 1px solid #dee2e6;
+        }
+        .account-sidebar .nav-link {
+            color: #495057;
+            border-radius: 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .account-sidebar .nav-link.active {
+            color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-left: 3px solid #0d6efd;
+        }
+        .account-sidebar .nav-link:hover:not(.active) {
+            background-color: #f8f9fa;
+        }
+        .account-card {
+            border: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .order-status {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .status-processing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-shipped {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        .status-delivered {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-cancelled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same navigation bar as account.html -->
+
+    <!-- Saved Items Content -->
+    <section class="account-page py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Same sidebar as account.html -->
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Saved Items</h2>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="savedItemsActions" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#" id="selectAllItems"><i class="fas fa-check-square me-2"></i> Select All</a></li>
+                                <li><a class="dropdown-item" href="#" id="clearAllItems"><i class="fas fa-trash-alt me-2"></i> Clear All</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-download me-2"></i> Export List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Saved Items Grid -->
+                    <div class="row g-4" id="savedItemsGrid">
+                        <div class="col-md-4" data-item-id="prod1">
+                            <div class="card h-100">
+                                <div class="card-img-top position-relative">
+                                    <img src="../img/products/cement.jpg" class="card-img-top" alt="Portland Cement">
+                                    <div class="position-absolute top-0 end-0 p-2">
+                                        <input type="checkbox" class="form-check-input item-checkbox" id="item1">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Portland Cement 50kg</h6>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="text-primary mb-0">₹350/bag</h5>
+                                        <button class="btn btn-sm btn-outline-danger remove-item-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <button class="btn btn-sm btn-primary w-100">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-item-id="prod2">
+                            <div class="card h-100">
+                                <div class="card-img-top position-relative">
+                                    <img src="../img/products/steel-bar.jpg" class="card-img-top" alt="TMT Steel Bars">
+                                    <div class="position-absolute top-0 end-0 p-2">
+                                        <input type="checkbox" class="form-check-input item-checkbox" id="item2">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">TMT Steel Bars</h6>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="text-primary mb-0">₹72/kg</h5>
+                                        <button class="btn btn-sm btn-outline-danger remove-item-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <button class="btn btn-sm btn-primary w-100">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-item-id="prod3">
+                            <div class="card h-100">
+                                <div class="card-img-top position-relative">
+                                    <img src="../img/products/bricks.jpg" class="card-img-top" alt="Red Clay Bricks">
+                                    <div class="position-absolute top-0 end-0 p-2">
+                                        <input type="checkbox" class="form-check-input item-checkbox" id="item3">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Red Clay Bricks</h6>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="text-primary mb-0">₹4,500/1000pcs</h5>
+                                        <button class="btn btn-sm btn-outline-danger remove

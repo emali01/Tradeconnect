@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Materials | TradeConnect - B2B Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">TradeConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Building Materials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="supplier.html">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Get Quotes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-language"></i> Language
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" class="change-language"data-lang="en">English</a></li>                                                                                                                                 <li><a class="dropdown-item" class="change-language"data-lang="sw">Kiswahili</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="../auth/login.html" class="btn btn-outline-light me-2">Login</a>
+                        <a href="../auth/register.html" class="btn btn-light">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-light py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="mb-3">Building Materials</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../products.html">Products</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Building Materials</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-inline-block me-3">
+                        <span class="me-2">Sort by:</span>
+                        <select class="form-select form-select-sm d-inline-block w-auto">
+                            <option>Popularity</option>
+                            <option>Price - Low to High</option>
+                            <option>Price - High to Low</option>
+                            <option>Newest First</option>
+                        </select>
+                    </div>
+                    <span class="text-muted">1,248 products found</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="product-listing py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Category Filter -->
+                            <div class="mb-4">
+                                <h6 class="mb-3">Categories</h6>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="cement" checked>
+                                    <label class="form-check-label" for="cement">Cement & Concrete</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="bricks" checked>
+                                    <label class="form-check-label" for="bricks">Bricks & Blocks</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="steel" checked>
+                                    <label class="form-check-label" for="steel">Steel & Metal</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="wood" checked>
+                                    <label class="form-check-label" for="wood">Wood & Timber</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="roofing" checked>
+                                    <label class="form-check-label" for="roofing">Roofing Materials</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="insulation" checked>
+                                    <label class="form-check-label" for="insulation">Insulation</label>
+                                </div>
+                            </div>
+
+                            <!-- Price Range -->
+                            <div class="mb-4">
+                                <h6 class="mb-3">Price Range</h6>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <input type="number" class="form-control form-control-sm me-2" placeholder="Min" value="0">
+                                    <input type="number" class="form-control form-control-sm" placeholder="Max" value="10000">
+                                </div>
+                                <button class="btn btn-sm btn-primary w-100">Apply</button>
+                            </div>
+
+                            <!-- Supplier Location -->
+                            <div class="mb-4">
+                                <h6 class="mb-3">Supplier Location</h6>
+                                <select class="form-select form-select-sm">
+                                    <option>Any Location</option>
+                                    <option>Local (within 100km)</option>
+                                    <option>Domestic</option>
+                                    <option>International</option>
+                                </select>
+                            </div>
+
+                            <!-- Certification -->
+                            <div class="mb-4">
+                                <h6 class="mb-3">Certification</h6>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="iso">
+                                    <label class="form-check-label" for="iso">ISO Certified</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="green">
+                                    <label class="form-check-label" for="green">Green Certified</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="safety">
+                                    <label class="form-check-label" for="safety">Safety Certified</label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline-secondary btn-sm w-100">Reset Filters</button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Suppliers -->
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Featured Suppliers</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="supplier-card mb-3 d-flex align-items-center">
+                                <img src="../img/supplier1.jpg" alt="Supplier" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Global Building Solutions</h6>
+                                    <small class="text-muted">4.8 <i class="fas fa-star text-warning"></i></small>
+                                </div>
+                            </div>
+                            <div class="supplier-card mb-3 d-flex align-items-center">
+                                <img src="../img/supplier2.jpg" alt="Supplier" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Steel & Structure Ltd</h6>
+                                    <small class="text-muted">4.6 <i class="fas fa-star text-warning"></i></small>
+                                </div>
+                            </div>
+                            <div class="supplier-card d-flex align-items-center">
+                                <img src="../img/supplier3.jpg" alt="Supplier" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">EcoBuild Materials</h6>
+                                    <small class="text-muted">4.9 <i class="fas fa-star text-warning"></i></small>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-link btn-sm mt-3 ps-0">View all suppliers <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Listing -->
+                <div class="col-lg-9">
+                    <!-- Subcategories -->
+                    <div class="subcategories mb-4">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2 active">All Building Materials</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Cement & Concrete</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Bricks & Blocks</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Steel & Metal</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Wood & Timber</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Roofing</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">Insulation</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm mb-2">Doors & Windows</a>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div class="row g-4">
+                        <!-- Product 1 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <div class="badge bg-danger position-absolute mt-2 ms-2">Bestseller</div>
+                                <img src="../img/products/cement.jpg" class="card-img-top" alt="Portland Cement">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-success">In Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                                    </div>
+                                    <h5 class="card-title">Portland Cement 50kg</h5>
+                                    <p class="card-text text-muted">Grade 53, ISI Certified, Water Resistant</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                        <small class="ms-1">(128)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹350/bag</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <img src="../img/products/steel-bar.jpg" class="card-img-top" alt="Steel TMT Bars">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-success">In Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Delhi</span>
+                                    </div>
+                                    <h5 class="card-title">TMT Steel Bars</h5>
+                                    <p class="card-text text-muted">Fe 500D, 12mm diameter, 12m length</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="ms-1">(94)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹72/kg</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <div class="badge bg-info position-absolute mt-2 ms-2">New</div>
+                                <img src="../img/products/bricks.jpg" class="card-img-top" alt="Clay Bricks">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-success">In Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Bangalore</span>
+                                    </div>
+                                    <h5 class="card-title">Red Clay Bricks</h5>
+                                    <p class="card-text text-muted">First Class, Size: 190x90x90mm, 1000pcs</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="ms-1">(215)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹4,500/1000pcs</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <img src="../img/products/plywood.jpg" class="card-img-top" alt="Marine Plywood">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-warning text-dark">Low Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Chennai</span>
+                                    </div>
+                                    <h5 class="card-title">Marine Plywood</h5>
+                                    <p class="card-text text-muted">18mm thickness, BWP Grade, 8x4 feet</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                        <small class="ms-1">(76)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹120/sq.ft</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <div class="badge bg-danger position-absolute mt-2 ms-2">Deal</div>
+                                <img src="../img/products/roofing.jpg" class="card-img-top" alt="Roofing Sheets">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-success">In Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Hyderabad</span>
+                                    </div>
+                                    <h5 class="card-title">Galvanized Roofing Sheets</h5>
+                                    <p class="card-text text-muted">0.5mm thickness, Corrosion Resistant</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="ms-1">(62)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹450/sheet</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card product-card h-100">
+                                <img src="../img/products/insulation.jpg" class="card-img-top" alt="Thermal Insulation">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-success">In Stock</span>
+                                        <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Pune</span>
+                                    </div>
+                                    <h5 class="card-title">Thermal Insulation Board</h5>
+                                    <p class="card-text text-muted">50mm thickness, Fire Resistant, 8x4 feet</p>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="ms-1">(43)</small>
+                                    </div>
+                                    <h4 class="text-primary mb-3">₹320/sheet</h4>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                        <button class="btn btn-sm btn-primary">Request Quote</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Buy Building Materials on TradeConnect?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Quality Assurance</h4>
+                            <p>All suppliers are vetted and materials are quality checked before listing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <h4>Competitive Pricing</h4>
+                            <p>Get the best prices by comparing multiple suppliers in one place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4>Reliable Logistics</h4>
+                            <p>Our partner network ensures safe and timely delivery of materials.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Quote CTA -->
+    <section class="quote-cta py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Need Bulk Quantities or Custom Materials?</h2>
+            <p class="lead mb-4">Get competitive quotes from multiple verified suppliers</p>
+            <a href="#" class="btn btn-light btn-lg px-4">Request a Quote Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="mb-3">TradeConnect</h5>
+                    <p>India's premier B2B marketplace connecting buyers and suppliers across industries.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="../products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Suppliers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Get Quotes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Help & Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 TradeConnect. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Available in: 
+                        <a href="#" class="text-white">English</a> | 
+                        <a href="#" class="text-white">Kiswahili</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>src="js/i18n.js"</script>
+</body>
+</html>

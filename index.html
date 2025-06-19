@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app_name">TradeConnect - B2B Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Additional styling for new sections */
+        .product-section {
+            padding: 3rem 0;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: #0d6efd;
+        }
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-i18n="app_name">TradeConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html" data-i18n="products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="supplier.html" data-i18n="suppliers">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-i18n="get_quotes">Get Quotes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-language"></i> <span data-i18n="language">Language</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item change-language" href="#" data-lang="en" data-i18n="english">English</a></li>
+                            <li><a class="dropdown-item change-language" href="#" data-lang="sw" data-i18n="kiswahili">Kiswahili</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="auth/login.html" class="btn btn-outline-light me-2" data-i18n="login">Login</a>
+                        <a href="auth/register.html" class="btn btn-light" data-i18n="register">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4" data-i18n="hero_title">Connect with Suppliers & Buyers Worldwide</h1>
+                    <p class="lead mb-4" data-i18n="hero_subtitle">TradeConnect is your premier B2B marketplace for quality products and reliable suppliers.</p>
+                    <div class="d-flex gap-3">
+                        <a href="auth/register.html?type=buyer" class="btn btn-primary btn-lg" data-i18n="im_buyer">I'm a Buyer</a>
+                        <a href="auth/register.html?type=seller" class="btn btn-outline-primary btn-lg" data-i18n="im_seller">I'm a Seller</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="hero.jpg" alt="B2B Marketplace" class="img-fluid rounded" data-i18n-alt="hero_image_alt">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="browse_categories">Browse Popular Categories</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <a href="products.html?category=electronics" class="category-card">
+                        <div class="card h-100">
+                            <img src="img/sc.png" class="card-img-top" alt="Electronics" data-i18n-alt="electronics">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-i18n="electronics">Electronics</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="products.html?category=textiles" class="category-card">
+                        <div class="card h-100">
+                            <img src="img/wp.png" class="card-img-top" alt="Textiles" data-i18n-alt="textiles">
+                            <div class="card-body text-center"> wo
+                                <h5 class="card-title" data-i18n="textiles">Textiles</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="products.html?category=machinery" class="category-card">
+                        <div class="card h-100">
+                            <img src="img/sc.png" class="card-img-top" alt="Machinery" data-i18n-alt="machinery">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-i18n="machinery">Machinery</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="products.html?category=chemicals" class="category-card">
+                        <div class="card h-100">
+                            <img src="img/wp.png" class="card-img-top" alt="Chemicals" data-i18n-alt="chemicals">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-i18n="chemicals">Chemicals</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 text-center mt-4">
+                    <a href="products.html" class="btn btn-outline-primary" data-i18n="view_all_categories">View All Categories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cement & Concrete Products Section -->
+    <section class="product-section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="cement_concrete">Cement & Concrete Products</h2>
+            <div class="row g-4" id="cementProducts">
+                <!-- Cement products will be loaded here via JavaScript -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html?category=cement" class="btn btn-outline-primary" data-i18n="view_all">View All Cement Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steel & Metal Products Section -->
+    <section class="product-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="steel_metal">Steel & Metal Products</h2>
+            <div class="row g-4" id="steelProducts">
+                <!-- Steel products will be loaded here via JavaScript -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html?category=steel" class="btn btn-outline-primary" data-i18n="view_all">View All Steel Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roofing Materials Section -->
+    <section class="product-section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="roofing_materials">Roofing Materials</h2>
+            <div class="row g-4" id="roofingProducts">
+                <!-- Roofing products will be loaded here via JavaScript -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html?category=roofing" class="btn btn-outline-primary" data-i18n="view_all">View All Roofing Materials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 data-i18n="featured_products">Featured Products</h2>
+                <a href="products.html" class="btn btn-sm btn-outline-primary" data-i18n="view_all">View All</a>
+            </div>
+            <div class="row g-4" id="featuredProducts">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Suppliers -->
+    <section class="verified-suppliers py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 data-i18n="verified_suppliers">Verified Suppliers</h2>
+                <a href="#" class="btn btn-sm btn-outline-primary" data-i18n="view_all">View All</a>
+            </div>
+            <div class="row g-4" id="verifiedSuppliers">
+                <!-- Suppliers will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="how_it_works">How TradeConnect Works</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h4 data-i18n="step1">1. Register</h4>
+                            <p data-i18n="step1_desc">Create your free account as a buyer or seller in minutes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 data-i18n="step2">2. Find Products/Suppliers</h4>
+                            <p data-i18n="step2_desc">Browse our extensive catalog or search for specific products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4 data-i18n="step3">3. Connect & Trade</h4>
+                            <p data-i18n="step3_desc">Communicate directly with suppliers and complete your transactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="testimonials">What Our Users Say</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card text-center p-4">
+                                    <img src="img/user1.jpg" class="rounded-circle mb-3" width="80" alt="User" data-i18n-alt="user1">
+                                    <p class="mb-3" data-i18n="testimonial1">"TradeConnect has transformed our sourcing process. We've found reliable suppliers at competitive prices."</p>
+                                    <h5>Rajesh Kumar</h5>
+                                    <p class="text-muted" data-i18n="user1_title">Director, ABC Enterprises</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card text-center p-4">
+                                    <img src="img/user2.jpg" class="rounded-circle mb-3" width="80" alt="User" data-i18n-alt="user2">
+                                    <p class="mb-3" data-i18n="testimonial2">"As a small manufacturer, TradeConnect has helped us reach buyers we never could have accessed on our own."</p>
+                                    <h5>Priya Sharma</h5>
+                                    <p class="text-muted" data-i18n="user2_title">Owner, XYZ Textiles</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden" data-i18n="previous">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden" data-i18n="next">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4" data-i18n="cta_title">Ready to Grow Your Business?</h2>
+            <p class="lead mb-4" data-i18n="cta_subtitle">Join thousands of businesses already using TradeConnect to find new opportunities.</p>
+            <a href="auth/register.html" class="btn btn-light btn-lg px-4" data-i18n="get_started">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="mb-3" data-i18n="app_name">TradeConnect</h5>
+                    <p data-i18n="footer_desc">India's premier B2B marketplace connecting buyers and suppliers across industries.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3" data-i18n="quick_links">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white" data-i18n="home">Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white" data-i18n="products">Products</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="suppliers">Suppliers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="get_quotes">Get Quotes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3" data-i18n="company">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="about_us">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="careers">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="blog">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="contact_us">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3" data-i18n="help_support">Help & Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="help_center">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="faqs">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="privacy_policy">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white" data-i18n="terms_service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 TradeConnect. <span data-i18n="all_rights">All rights reserved.</span></p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0" data-i18n="available_in">Available in: 
+                        <a href="#" class="text-white change-language" data-lang="en" data-i18n="english">English</a> | 
+                        <a href="#" class="text-white change-language" data-lang="sw" data-i18n="kiswahili">Kiswahili</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/mainjs.js"></script>
+    
+    <script>
+        // Function to load products for each section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample product data - in a real app, this would come from an API
+            const cementProducts = [
+                {
+                    id: 1,
+                    name: "Portland Cement (50kg)",
+                    price: "Tsh 150",
+                    image: "img/wp.png",
+                    supplier: "ABC Cement Co.",
+                    rating: 4.5
+                },
+                {
+                    id: 2,
+                    name: "White Cement (25kg)",
+                    price: "Tsh550",
+                    image: "img/sc.png",
+                    supplier: "XYZ Builders",
+                    rating: 4.2
+                },
+                {
+                    id: 3,
+                    name: "Ready Mix Concrete",
+                    price: "Tsh4,500/m³",
+                    image: "img/wp.png",
+                    supplier: "Concrete Solutions",
+                    rating: 4.7
+                },
+                {
+                    id: 4,
+                    name: "Cement Blocks (Standard)",
+                    price: "Tsh45/piece",
+                    image: "img/concrete2.jpg",
+                    supplier: "Block Masters",
+                    rating: 4.0
+                }
+            ];
+
+            const steelProducts = [
+                {
+                    id: 5,
+                    name: "TMT Steel Bars (12mm)",
+                    price: "Tsh75/kg",
+                    image: "img/steel1.jpg",
+                    supplier: "Steel King Ltd",
+                    rating: 4.8
+                },
+                {
+                    id: 6,
+                    name: "GI Sheets (1.5mm)",
+                    price: "Tsh650/sheet",
+                    image: "img/steel2.jpg",
+                    supplier: "Metal Works",
+                    rating: 4.3
+                },
+                {
+                    id: 7,
+                    name: "Stainless Steel Pipes",
+                    price: "Ysh1,200/m",
+                    image: "img/steel3.jpg",
+                    supplier: "Piping Solutions",
+                    rating: 4.6
+                },
+                {
+                    id: 8,
+                    name: "Aluminum Channels",
+                    price: "Tsh350/kg",
+                    image: "img/steel4.jpg",
+                    supplier: "Alumex Corp",
+                    rating: 4.4
+                }
+            ];
+
+            const roofingProducts = [
+                {
+                    id: 9,
+                    name: "Clay Roof Tiles",
+                    price: "₹120/piece",
+                    image: "img/roofing1.jpg",
+                    supplier: "Traditional Roofing",
+                    rating: 4.5
+                },
+                {
+                    id: 10,
+                    name: "Metal Roofing Sheets",
+                    price: "₹800/sheet",
+                    image: "img/roofing2.jpg",
+                    supplier: "Metal Roof Co.",
+                    rating: 4.2
+                },
+                {
+                    id: 11,
+                    name: "PVC Roofing Membrane",
+                    price: "₹450/m²",
+                    image: "img/roofing3.jpg",
+                    supplier: "Waterproof Solutions",
+                    rating: 4.7
+                },
+                {
+                    id: 12,
+                    name: "Asphalt Shingles",
+                    price: "₹300/pack",
+                    image: "img/roofing4.jpg",
+                    supplier: "Shingle Masters",
+                    rating: 4.0
+                }
+            ];
+
+            // Function to generate product HTML
+            function createProductCard(product) {
+                return `
+                    <div class="col-md-3 col-6">
+                        <div class="card product-card h-100">
+                            <img src="${product.image}" class="card-img-top product-img" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="text-muted">${product.supplier}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold text-primary">${product.price}</span>
+                                    <div class="rating">
+                                        ${generateRatingStars(product.rating)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <button class="btn btn-sm btn-outline-primary w-100" data-i18n="view_details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Function to generate rating stars
+            function generateRatingStars(rating) {
+                let stars = '';
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                
+                for (let i = 0; i < fullStars; i++) {
+                    stars += '<i class="fas fa-star text-warning"></i>';
+                }
+                
+                if (hasHalfStar) {
+                    stars += '<i class="fas fa-star-half-alt text-warning"></i>';
+                }
+                
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                    stars += '<i class="far fa-star text-warning"></i>';
+                }
+                
+                return stars;
+            }
+
+            // Load cement products
+            const cementContainer = document.getElementById('cementProducts');
+            cementProducts.forEach(product => {
+                cementContainer.innerHTML += createProductCard(product);
+            });
+
+            // Load steel products
+            const steelContainer = document.getElementById('steelProducts');
+            steelProducts.forEach(product => {
+                steelContainer.innerHTML += createProductCard(product);
+            });
+
+            // Load roofing products
+            const roofingContainer = document.getElementById('roofingProducts');
+            roofingProducts.forEach(product => {
+                roofingContainer.innerHTML += createProductCard(product);
+            });
+        });
+    </script>
+</body>
+</html>

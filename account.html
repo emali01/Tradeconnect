@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | TradeConnect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .account-sidebar {
+            border-right: 1px solid #dee2e6;
+        }
+        .account-sidebar .nav-link {
+            color: #495057;
+            border-radius: 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .account-sidebar .nav-link.active {
+            color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-left: 3px solid #0d6efd;
+        }
+        .account-sidebar .nav-link:hover:not(.active) {
+            background-color: #f8f9fa;
+        }
+        .account-card {
+            border: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .order-status {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .status-processing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-shipped {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        .status-delivered {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-cancelled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">TradeConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="supplier.html">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Get Quotes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-language"></i> Language
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Kiswahili</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="accountDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> My Account
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="account.html"><i class="fas fa-user me-2"></i> Account</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="fas fa-box me-2"></i> Orders</a></li>
+                            <li><a class="dropdown-item" href="messages.html"><i class="fas fa-envelope me-2"></i> Messages</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Account Page Content -->
+    <section class="account-page py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-lg-3 mb-4 account-sidebar">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="../img/user-avatar.jpg" alt="User Avatar" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Rajesh Kumar</h5>
+                            <small class="text-muted">Premium Member</small>
+                        </div>
+                    </div>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="account.html">
+                                <i class="fas fa-user me-2"></i> Account Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">
+                                <i class="fas fa-id-card me-2"></i> Profile Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="orders.html">
+                                <i class="fas fa-box me-2"></i> My Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="addresses.html">
+                                <i class="fas fa-map-marker-alt me-2"></i> Address Book
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="messages.html">
+                                <i class="fas fa-envelope me-2"></i> Messages
+                                <span class="badge bg-primary float-end">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="saved-items.html">
+                                <i class="fas fa-heart me-2"></i> Saved Items
+                                <span class="badge bg-primary float-end">12</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="security.html">
+                                <i class="fas fa-lock me-2"></i> Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications.html">
+                                <i class="fas fa-bell me-2"></i> Notifications
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Account Overview</h2>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="accountActions" data-bs-toggle="dropdown">
+                                <i class="fas fa-cog me-1"></i> Actions
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="profile.html"><i class="fas fa-edit me-2"></i> Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="security.html"><i class="fas fa-lock me-2"></i> Change Password</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-download me-2"></i> Export Data</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Account Summary Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="card account-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="card-subtitle mb-2 text-muted">Total Orders</h6>
+                                            <h3 class="card-title mb-0">24</h3>
+                                        </div>
+                                        <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                            <i class="fas fa-box-open text-primary" style="font-size: 1.5rem;"></i>
+                                        </div>
+                                    </div>
+                                    <a href="orders.html" class="btn btn-link ps-0 mt-3">View all orders</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card account-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="card-subtitle mb-2 text-muted">Unread Messages</h6>
+                                            <h3 class="card-title mb-0">3</h3>
+                                        </div>
+                                        <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                            <i class="fas fa-envelope text-primary" style="font-size: 1.5rem;"></i>
+                                        </div>
+                                    </div>
+                                    <a href="messages.html" class="btn btn-link ps-0 mt-3">View messages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card account-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="card-subtitle mb-2 text-muted">Saved Items</h6>
+                                            <h3 class="card-title mb-0">12</h3>
+                                        </div>
+                                        <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                            <i class="fas fa-heart text-primary" style="font-size: 1.5rem;"></i>
+                                        </div>
+                                    </div>
+                                    <a href="saved-items.html" class="btn btn-link ps-0 mt-3">View saved items</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Orders -->
+                    <div class="card account-card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Recent Orders</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Order #</th>
+                                            <th>Date</th>
+                                            <th>Items</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TC-78945</td>
+                                            <td>15 Jun 2023</td>
+                                            <td>3</td>
+                                            <td>₹24,850</td>
+                                            <td><span class="order-status status-delivered">Delivered</span></td>
+                                            <td><a href="order-details.html" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TC-78231</td>
+                                            <td>10 Jun 2023</td>
+                                            <td>5</td>
+                                            <td>₹42,150</td>
+                                            <td><span class="order-status status-shipped">Shipped</span></td>
+                                            <td><a href="order-details.html" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TC-77982</td>
+                                            <td>05 Jun 2023</td>
+                                            <td>2</td>
+                                            <td>₹15,750</td>
+                                            <td><span class="order-status status-processing">Processing</span></td>
+                                            <td><a href="order-details.html" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TC-77456</td>
+                                            <td>28 May 2023</td>
+                                            <td>1</td>
+                                            <td>₹8,400</td>
+                                            <td><span class="order-status status-cancelled">Cancelled</span></td>
+                                            <td><a href="order-details.html" class="btn btn-sm btn-outline-primary">View</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="orders.html" class="btn btn-primary">View All Orders</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Messages -->
+                    <div class="card account-card mb-4">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Recent Messages</h5>
+                            <a href="messages.html" class="btn btn-sm btn-light">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <a href="message-details.html" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Order #TC-78945 Shipping Update</h6>
+                                        <small class="text-muted">Today, 10:45 AM</small>
+                                    </div>
+                                    <p class="mb-1">Your order has been shipped and will arrive within 2 business days...</p>
+                                    <small class="text-muted">From: TradeConnect Support</small>
+                                </a>
+                                <a href="message-details.html" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">New quote request received</h6>
+                                        <small class="text-muted">Yesterday, 3:22 PM</small>
+                                    </div>
+                                    <p class="mb-1">You have received a new quote request for construction materials...</p>
+                                    <small class="text-muted">From: Global Building Solutions</small>
+                                </a>
+                                <a href="message-details.html" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Your account security</h6>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                    <p class="mb-1">We've noticed a new login to your account from Mumbai, India...</p>
+                                    <small class="text-muted">From: TradeConnect Security</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Saved Items -->
+                    <div class="card account-card">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Recently Saved Items</h5>
+                            <a href="saved-items.html" class="btn btn-sm btn-light">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <img src="../img/products/cement.jpg" class="card-img-top" alt="Portland Cement">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Portland Cement 50kg</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h5 class="text-primary mb-0">₹350/bag</h5>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <img src="../img/products/steel-bar.jpg" class="card-img-top" alt="TMT Steel Bars">
+                                        <div class="card-body">
+                                            <h6 class="card-title">TMT Steel Bars</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h5 class="text-primary mb-0">₹72/kg</h5>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <img src="../img/products/bricks.jpg" class="card-img-top" alt="Red Clay Bricks">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Red Clay Bricks</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h5 class="text-primary mb-0">₹4,500/1000pcs</h5>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="mb-3">TradeConnect</h5>
+                    <p>India's premier B2B marketplace connecting buyers and suppliers across industries.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="../products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Suppliers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Get Quotes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Help & Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 TradeConnect. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Available in: 
+                        <a href="#" class="text-white">English</a> | 
+                        <a href="#" class="text-white">Kiswahili</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/account.js"></script>
+       <script src="js/main.js"></script>
+</body>
+</html>

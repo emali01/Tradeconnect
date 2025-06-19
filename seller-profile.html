@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Building Solutions - Seller Profile | TradeConnect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .seller-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), url('../img/seller-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        .seller-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .badge-verified {
+            background-color: #20c997;
+        }
+        .product-card .card-img-top {
+            height: 180px;
+            object-fit: contain;
+            background: #f8f9fa;
+            padding: 1rem;
+        }
+        .stats-card {
+            border-left: 4px solid var(--primary-color);
+        }
+        .contact-card {
+            border: none;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">TradeConnect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Get Quotes</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown me-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-language"></i> Language
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Kiswahili</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="../auth/login.html" class="btn btn-outline-light me-2">Login</a>
+                        <a href="../auth/register.html" class="btn btn-light">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seller Header -->
+    <header class="seller-header text-center">
+        <div class="container">
+            <img src="../img/supplier1.jpg" alt="Global Building Solutions" class="seller-logo rounded-circle mb-3">
+            <h1 class="mb-2">Global Building Solutions</h1>
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="rating me-3">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star-half-alt text-warning"></i>
+                    <span class="ms-2">4.7 (342 reviews)</span>
+                </div>
+                <span class="badge badge-verified text-white"><i class="fas fa-check-circle me-1"></i> Verified Seller</span>
+            </div>
+            <p class="lead mb-4">Manufacturer & Wholesaler of Premium Construction Materials Since 2005</p>
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-light"><i class="fas fa-envelope me-2"></i> Contact Supplier</button>
+                <button class="btn btn-outline-light"><i class="fas fa-store me-2"></i> Visit Store</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="seller-profile py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Sidebar -->
+                <div class="col-lg-4 mb-4">
+                    <!-- About Seller -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">About Seller</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3"><strong><i class="fas fa-map-marker-alt text-primary me-2"></i> Location:</strong> Mumbai, Maharashtra, India</li>
+                                <li class="mb-3"><strong><i class="fas fa-building text-primary me-2"></i> Business Type:</strong> Manufacturer, Wholesaler</li>
+                                <li class="mb-3"><strong><i class="fas fa-calendar-alt text-primary me-2"></i> Year Established:</strong> 2005</li>
+                                <li class="mb-3"><strong><i class="fas fa-users text-primary me-2"></i> Employees:</strong> 50-100</li>
+                                <li class="mb-3"><strong><i class="fas fa-boxes text-primary me-2"></i> Main Products:</strong> Cement, Steel, Bricks, Construction Chemicals</li>
+                                <li><strong><i class="fas fa-globe text-primary me-2"></i> Markets:</strong> Domestic, Southeast Asia, Middle East</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="card contact-card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Contact Supplier</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="mb-3">Primary Contact</h6>
+                                <p class="mb-2"><i class="fas fa-user text-primary me-2"></i> <strong>Mr. Rajesh Sharma</strong></p>
+                                <p class="mb-2"><i class="fas fa-phone-alt text-primary me-2"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
+                                <p class="mb-2"><i class="fas fa-envelope text-primary me-2"></i> <a href="mailto:sales@globalbuild.com">sales@globalbuild.com</a></p>
+                                <p><i class="fas fa-globe text-primary me-2"></i> <a href="https://www.globalbuild.com" target="_blank">www.globalbuild.com</a></p>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <h6 class="mb-3">Response Information</h6>
+                                <p class="mb-2"><i class="fas fa-clock text-primary me-2"></i> <strong>Response Time:</strong> Within 2 hours</p>
+                                <p class="mb-2"><i class="fas fa-percentage text-primary me-2"></i> <strong>Response Rate:</strong> 99%</p>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                <i class="fas fa-paper-plane me-2"></i> Send Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Seller Stats -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Seller Statistics</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="stats-card p-3 mb-3 bg-light rounded">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="mb-1">Transaction Level</h6>
+                                        <p class="mb-0 text-muted">Total orders completed</p>
+                                    </div>
+                                    <h3 class="text-primary mb-0">500+</h3>
+                                </div>
+                            </div>
+                            <div class="stats-card p-3 mb-3 bg-light rounded">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="mb-1">On-time Delivery</h6>
+                                        <p class="mb-0 text-muted">Orders delivered on time</p>
+                                    </div>
+                                    <h3 class="text-primary mb-0">98%</h3>
+                                </div>
+                            </div>
+                            <div class="stats-card p-3 bg-light rounded">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="mb-1">Customer Satisfaction</h6>
+                                        <p class="mb-0 text-muted">Positive feedback rate</p>
+                                    </div>
+                                    <h3 class="text-primary mb-0">96%</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Certifications</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="../img/iso-certified.png" alt="ISO Certified" width="50" class="me-3">
+                                <div>
+                                    <h6 class="mb-0">ISO 9001:2015 Certified</h6>
+                                    <small class="text-muted">Quality Management System</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="../img/green-certified.png" alt="Green Certified" width="50" class="me-3">
+                                <div>
+                                    <h6 class="mb-0">GreenPro Certified</h6>
+                                    <small class="text-muted">Eco-friendly Products</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="../img/safety-certified.png" alt="Safety Certified" width="50" class="me-3">
+                                <div>
+                                    <h6 class="mb-0">OHSAS 18001 Certified</h6>
+                                    <small class="text-muted">Occupational Health & Safety</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Company Description -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Company Profile</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Global Building Solutions is a leading manufacturer and supplier of premium construction materials with over 18 years of industry experience. We supply high-quality building materials to major construction projects across India and export to 12 countries.</p>
+                            <p>Our state-of-the-art manufacturing facilities and strict quality control processes ensure consistent product quality that meets international standards. We operate with a customer-first approach, offering competitive pricing without compromising on quality.</p>
+                            <h6 class="mt-4">Our Strengths</h6>
+                            <ul>
+                                <li>Vertically integrated manufacturing facilities</li>
+                                <li>In-house R&D center for product innovation</li>
+                                <li>Automated production lines for consistent quality</li>
+                                <li>500+ skilled employees</li>
+                                <li>Strategic warehouses across India for quick delivery</li>
+                                <li>Dedicated quality control team</li>
+                            </ul>
+                            <h6 class="mt-4">Production Capacity</h6>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Monthly Capacity</th>
+                                            <th>Lead Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Portland Cement</td>
+                                            <td>50,000 metric tons</td>
+                                            <td>3-5 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TMT Steel Bars</td>
+                                            <td>10,000 metric tons</td>
+                                            <td>7-10 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Concrete Blocks</td>
+                                            <td>2 million units</td>
+                                            <td>2-3 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Construction Chemicals</td>
+                                            <td>500 metric tons</td>
+                                            <td>5-7 days</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Products</h5>
+                            <a href="#" class="btn btn-sm btn-light">View All Products</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <!-- Product 1 -->
+                                <div class="col-md-6">
+                                    <div class="card product-card h-100">
+                                        <div class="badge bg-danger position-absolute mt-2 ms-2">Bestseller</div>
+                                        <img src="../img/products/cement.jpg" class="card-img-top" alt="Portland Cement">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span class="badge bg-success">In Stock</span>
+                                                <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                                            </div>
+                                            <h5 class="card-title">Portland Cement 50kg</h5>
+                                            <div class="rating mb-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                                <small class="ms-1">(128)</small>
+                                            </div>
+                                            <h4 class="text-primary mb-3">₹350/bag</h4>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                                <button class="btn btn-sm btn-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product 2 -->
+                                <div class="col-md-6">
+                                    <div class="card product-card h-100">
+                                        <img src="../img/products/steel-bar.jpg" class="card-img-top" alt="Steel TMT Bars">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span class="badge bg-success">In Stock</span>
+                                                <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                                            </div>
+                                            <h5 class="card-title">TMT Steel Bars</h5>
+                                            <div class="rating mb-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
+                                                <small class="ms-1">(94)</small>
+                                            </div>
+                                            <h4 class="text-primary mb-3">₹72/kg</h4>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                                <button class="btn btn-sm btn-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product 3 -->
+                                <div class="col-md-6">
+                                    <div class="card product-card h-100">
+                                        <div class="badge bg-info position-absolute mt-2 ms-2">New</div>
+                                        <img src="../img/products/bricks.jpg" class="card-img-top" alt="Clay Bricks">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span class="badge bg-success">In Stock</span>
+                                                <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                                            </div>
+                                            <h5 class="card-title">Red Clay Bricks</h5>
+                                            <div class="rating mb-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <small class="ms-1">(215)</small>
+                                            </div>
+                                            <h4 class="text-primary mb-3">₹4,500/1000pcs</h4>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                                <button class="btn btn-sm btn-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product 4 -->
+                                <div class="col-md-6">
+                                    <div class="card product-card h-100">
+                                        <img src="../img/products/construction-chemicals.jpg" class="card-img-top" alt="Construction Chemicals">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span class="badge bg-success">In Stock</span>
+                                                <span class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mumbai</span>
+                                            </div>
+                                            <h5 class="card-title">Concrete Admixture</h5>
+                                            <div class="rating mb-2">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <small class="ms-1">(28)</small>
+                                            </div>
+                                            <h4 class="text-primary mb-3">₹220/liter</h4>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-shopping-cart me-1"></i> Add</button>
+                                                <button class="btn btn-sm btn-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Reviews -->
+                    <div class="card">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Customer Reviews</h5>
+                            <a href="#" class="btn btn-sm btn-light">Write a Review</a>
+                        </div>
+                        <div class="card-body">
+                            <!-- Rating Summary -->
+                            <div class="row mb-4">
+                                <div class="col-md-4 text-center">
+                                    <div class="display-4 text-primary">4.7</div>
+                                    <div class="rating mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    </div>
+                                    <p class="text-muted">Based on 342 reviews</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="rating-distribution">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="me-2">5 <i class="fas fa-star text-warning"></i></div>
+                                            <div class="progress flex-grow-1" style="height: 10px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
+                                            </div>
+                                            <div class="ms-2">257 reviews</div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="me-2">4 <i class="fas fa-star text-warning"></i></div>
+                                            <div class="progress flex-grow-1" style="height: 10px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 15%"></div>
+                                            </div>
+                                            <div class="ms-2">51 reviews</div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="me-2">3 <i class="fas fa-star text-warning"></i></div>
+                                            <div class="progress flex-grow-1" style="height: 10px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 7%"></div>
+                                            </div>
+                                            <div class="ms-2">24 reviews</div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="me-2">2 <i class="fas fa-star text-warning"></i></div>
+                                            <div class="progress flex-grow-1" style="height: 10px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 2%"></div>
+                                            </div>
+                                            <div class="ms-2">7 reviews</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">1 <i class="fas fa-star text-warning"></i></div>
+                                            <div class="progress flex-grow-1" style="height: 10px;">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 1%"></div>
+                                            </div>
+                                            <div class="ms-2">3 reviews</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reviews List -->
+                            <div class="reviews-list">
+                                <!-- Review 1 -->
+                                <div class="review-item mb-4 pb-4 border-bottom">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <div>
+                                            <h5 class="mb-1">Excellent quality materials</h5>
+                                            <div class="rating small">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Posted on 15 June 2023</small>
+                                    </div>
+                                    <p class="mb-2">By: <strong>Construction Solutions Ltd.</strong> (Verified Buyer)</p>
+                                    <p>We've been sourcing materials from Global Building Solutions for our high-rise projects for the past 2 years. The quality is consistently good with excellent workability and strength development. Their delivery is always on time and their customer service is responsive.</p>
+                                    
+                                    <!-- Review Actions -->
+                                    <div class="review-actions mt-3">
+                                        <button class="btn btn-sm btn-outline-secondary me-2"><i class="far fa-thumbs-up me-1"></i> Helpful (24)</button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="far fa-comment me-1"></i> Comment</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 2 -->
+                                <div class="review-item mb-4 pb-4 border-bottom">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <div>
+                                            <h5 class="mb-1">Reliable supplier</h5>
+                                            <div class="rating small">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Posted on 5 May 2023</small>
+                                    </div>
+                                    <p class="mb-2">By: <strong>Home Builder Associates</strong> (Verified Buyer)</p>
+                                    <p>We've used Global Building Solutions for several residential projects. The materials are good quality and their technical support team is knowledgeable. The only minor issue was some variation in color between different batches of cement, but it didn't affect the performance.</p>
+                                    
+                                    <!-- Review Actions -->
+                                    <div class="review-actions mt-3">
+                                        <button class="btn btn-sm btn-outline-secondary me-2"><i class="far fa-thumbs-up me-1"></i> Helpful (8)</button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="far fa-comment me-1"></i> Comment</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 3 -->
+                                <div class="review-item">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <div>
+                                            <h5 class="mb-1">Good for bulk orders</h5>
+                                            <div class="rating small">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star-half-alt text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">Posted on 22 April 2023</small>
+                                    </div>
+                                    <p class="mb-2">By: <strong>Infra Developers</strong> (Verified Buyer)</p>
+                                    <p>We placed a large order for a commercial complex project. The pricing was competitive for the quantity we ordered, and they were able to meet our tight deadline. The quality control certificates provided with each shipment gave us confidence in the materials.</p>
+                                    
+                                    <!-- Review Actions -->
+                                    <div class="review-actions mt-3">
+                                        <button class="btn btn-sm btn-outline-secondary me-2"><i class="far fa-thumbs-up me-1"></i> Helpful (15)</button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="far fa-comment me-1"></i> Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- View All Reviews Button -->
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-outline-primary">View All Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Global Building Solutions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="supplierContactForm">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactCompany" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="contactCompany" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="contactPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactProduct" class="form-label">Product of Interest</label>
+                            <select class="form-select" id="contactProduct">
+                                <option value="">Select a product</option>
+                                <option value="cement">Portland Cement</option>
+                                <option value="steel">TMT Steel Bars</option>
+                                <option value="bricks">Red Clay Bricks</option>
+                                <option value="chemicals">Construction Chemicals</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactQuantity" class="form-label">Quantity Needed</label>
+                            <input type="text" class="form-control" id="contactQuantity" placeholder="E.g., 100 bags, 5 tons">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="supplierContactForm" class="btn btn-primary">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="mb-3">TradeConnect</h5>
+                    <p>India's premier B2B marketplace connecting buyers and suppliers across industries.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="../products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Suppliers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Get Quotes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Help & Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 TradeConnect. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Available in: 
+                        <a href="#" class="text-white">English</a> | 
+                        <a href="#" class="text-white">Kiswahili</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/seller-profile.js"></script>
+</body>
+</html>
